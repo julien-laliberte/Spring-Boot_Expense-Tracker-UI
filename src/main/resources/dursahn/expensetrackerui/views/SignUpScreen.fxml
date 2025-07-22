@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import io.github.palexdev.mfxcore.controls.Text?>
+<?import io.github.palexdev.materialfx.controls.MFXPasswordField?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="dursahn.expensetrackerui.controllers.SignUpController"
+      spacing="15"
+      alignment="CENTER"
+      styleClass="login-vbox">
+
+    <Text text="Personal Expense Tracker" styleClass="login-heading"/>
+    <Text text="Enter your login credentials" styleClass="login-subheading"/>
+
+    <MFXTextField fx:id="fullNameField" promptText="Enter your full name" styleClass="mfx-text-field"/>
+    <MFXTextField fx:id="usernameField" promptText="Enter your Username" styleClass="mfx-text-field"/>
+    <MFXPasswordField fx:id="passwordField" promptText="Enter your Password" styleClass="mfx-password-field"/>
+    <MFXPasswordField fx:id="passwordRepeat" promptText="Confirm your Password" styleClass="mfx-password-field"/>
+    <MFXButton text="Submit" fx:id="submitButton" onAction="#handleSignUp" styleClass="mfx-button"/>
+
+    <HBox alignment="CENTER">
+        <Text text="Already registered? "/>
+        <Text text="Login" styleClass="link-text" onMouseClicked="#handleLogin"/>
+    </HBox>
+</VBox>

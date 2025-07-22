@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="dursahn.expensetrackerui.controllers.MainScreenController">
+    <!-- Main layout: Horizontal Box for sidebar and table -->
+    <HBox spacing="20" styleClass="main-layout">
+
+        <!-- Sidebar for actions -->
+        <VBox spacing="20" styleClass="sidebar" alignment="TOP_CENTER" HBox.hgrow="NEVER">
+
+            <!-- Sidebar Heading -->
+            <Label text="Actions" styleClass="sidebar-heading"/>
+
+            <!-- Date Picker -->
+            <DatePicker fx:id="datePicker" promptText="Select Date" />
+
+            <!-- Add Expense Button (Outlined) -->
+            <MFXButton text="Add Expense" fx:id="addExpenseButton" onAction="#handleAddExpense" styleClass="outlined-button" />
+
+            <!-- View Monthly Stats Button (Outlined) -->
+            <MFXButton text="View Monthly Stats" fx:id="viewMonthlyStatsButton" onAction="#handleViewMonthlyStats" styleClass="outlined-button" />
+
+            <!-- Spacer to push the logout button to the bottom -->
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- Logout Button at bottom left corner (Solid Button) -->
+            <MFXButton text="Logout" fx:id="logoutButton" onAction="#handleLogout" styleClass="solid-button" />
+
+        </VBox>
+
+        <!-- Expense Table -->
+        <VBox spacing="20" styleClass="expense-table-container" HBox.hgrow="ALWAYS">
+            <Label text="Expenses" styleClass="expenses-header" />
+            <TableView fx:id="expenseTable" styleClass="expense-table">
+
+                <!-- Category Column -->
+                <TableColumn text="Category" fx:id="categoryColumn" />
+
+                <!-- Description Column -->
+                <TableColumn text="Description" fx:id="descriptionColumn" />
+
+                <!-- Amount Column -->
+                <TableColumn text="Amount" fx:id="amountColumn" />
+
+                <!-- Date Column -->
+                <TableColumn text="Date" fx:id="dateColumn" />
+
+                <!-- Edit Column -->
+                <TableColumn text="Edit" fx:id="editColumn" />
+
+                <!-- Delete Column -->
+                <TableColumn text="Delete" fx:id="deleteColumn" />
+            </TableView>
+        </VBox>
+    </HBox>
+
+</StackPane>
